@@ -1,108 +1,195 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e1040"/>
-      <stop offset="50%" style="stop-color:#2d1b69"/>
-      <stop offset="100%" style="stop-color:#1a0f3c"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#7c3aed"/>
-      <stop offset="50%" style="stop-color:#a855f7"/>
-      <stop offset="100%" style="stop-color:#c084fc"/>
+      <stop offset="0%" style="stop-color:#110a24"/>
+      <stop offset="40%" style="stop-color:#1e1040"/>
+      <stop offset="100%" style="stop-color:#150d30"/>
     </linearGradient>
     <linearGradient id="bar" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#7c3aed"/>
       <stop offset="33%" style="stop-color:#a855f7"/>
-      <stop offset="66%" style="stop-color:#c084fc"/>
+      <stop offset="66%" style="stop-color:#e879f9"/>
       <stop offset="100%" style="stop-color:#7c3aed"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <linearGradient id="dna1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="dna2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c084fc"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="sparkle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e9d5ff"/>
+      <stop offset="100%" style="stop-color:#c084fc"/>
+    </linearGradient>
+    <linearGradient id="extract-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.8"/>
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow-soft">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <filter id="glow-strong">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="banner-clip">
+      <rect width="1200" height="296" rx="12"/>
+    </clipPath>
   </defs>
 
   <!-- Background -->
   <rect width="1200" height="296" rx="12" fill="url(#bg)"/>
 
-  <!-- Subtle grid pattern -->
-  <g opacity="0.06">
-    <line x1="0" y1="60" x2="1200" y2="60" stroke="white" stroke-width="0.5"/>
-    <line x1="0" y1="120" x2="1200" y2="120" stroke="white" stroke-width="0.5"/>
-    <line x1="0" y1="180" x2="1200" y2="180" stroke="white" stroke-width="0.5"/>
-    <line x1="0" y1="240" x2="1200" y2="240" stroke="white" stroke-width="0.5"/>
-    <line x1="200" y1="0" x2="200" y2="300" stroke="white" stroke-width="0.5"/>
-    <line x1="400" y1="0" x2="400" y2="300" stroke="white" stroke-width="0.5"/>
+  <!-- Subtle grid -->
+  <g opacity="0.04" clip-path="url(#banner-clip)">
+    <line x1="0" y1="50" x2="1200" y2="50" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="150" x2="1200" y2="150" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="250" x2="1200" y2="250" stroke="white" stroke-width="0.5"/>
+    <line x1="150" y1="0" x2="150" y2="300" stroke="white" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="300" stroke="white" stroke-width="0.5"/>
+    <line x1="450" y1="0" x2="450" y2="300" stroke="white" stroke-width="0.5"/>
     <line x1="600" y1="0" x2="600" y2="300" stroke="white" stroke-width="0.5"/>
-    <line x1="800" y1="0" x2="800" y2="300" stroke="white" stroke-width="0.5"/>
-    <line x1="1000" y1="0" x2="1000" y2="300" stroke="white" stroke-width="0.5"/>
+    <line x1="750" y1="0" x2="750" y2="300" stroke="white" stroke-width="0.5"/>
+    <line x1="900" y1="0" x2="900" y2="300" stroke="white" stroke-width="0.5"/>
+    <line x1="1050" y1="0" x2="1050" y2="300" stroke="white" stroke-width="0.5"/>
   </g>
 
-  <!-- Glow orb -->
-  <circle cx="160" cy="148" r="80" fill="#7c3aed" opacity="0.15"/>
-  <circle cx="160" cy="148" r="50" fill="#a855f7" opacity="0.1"/>
+  <!-- Background glow behind logo -->
+  <circle cx="135" cy="148" r="90" fill="#7c3aed" opacity="0.12"/>
+  <circle cx="135" cy="148" r="55" fill="#a855f7" opacity="0.08"/>
 
-  <!-- DNA Helix icon -->
-  <g transform="translate(110, 98)" filter="url(#glow)">
-    <text font-size="80" fill="url(#accent)" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">🧬</text>
+  <!-- === LOGO: Claude sparkle extracting DNA helix === -->
+  <g transform="translate(70, 75)">
+
+    <!-- Claude sparkle (left side - the "AI") -->
+    <g filter="url(#glow-soft)">
+      <!-- Main 4-point star -->
+      <path d="M 42 10 L 48 55 L 42 100 L 36 55 Z" fill="url(#sparkle)" opacity="0.95"/>
+      <path d="M 10 55 L 36 49 L 62 55 L 36 61 Z" fill="url(#sparkle)" opacity="0.95"/>
+      <!-- Inner glow point -->
+      <circle cx="42" cy="55" r="6" fill="white" opacity="0.9"/>
+      <circle cx="42" cy="55" r="3" fill="white" opacity="1"/>
+      <!-- Small sparkle accents -->
+      <path d="M 20 25 L 23 32 L 20 39 L 17 32 Z" fill="#c084fc" opacity="0.5"/>
+      <path d="M 60 75 L 63 82 L 60 89 L 57 82 Z" fill="#c084fc" opacity="0.4"/>
+    </g>
+
+    <!-- Extraction beam / particles flowing from sparkle to DNA -->
+    <g opacity="0.6">
+      <circle cx="72" cy="48" r="2" fill="#c084fc" opacity="0.8"/>
+      <circle cx="80" cy="42" r="1.5" fill="#a855f7" opacity="0.7"/>
+      <circle cx="88" cy="52" r="2.5" fill="#c084fc" opacity="0.6"/>
+      <circle cx="76" cy="60" r="1.8" fill="#e9d5ff" opacity="0.5"/>
+      <circle cx="85" cy="65" r="1.2" fill="#a855f7" opacity="0.7"/>
+      <circle cx="70" cy="72" r="1.5" fill="#c084fc" opacity="0.4"/>
+      <circle cx="82" cy="35" r="1" fill="#e9d5ff" opacity="0.6"/>
+      <circle cx="90" cy="58" r="1.8" fill="#c084fc" opacity="0.5"/>
+    </g>
+
+    <!-- DNA double helix (right side - being extracted) -->
+    <g transform="translate(88, 0)" filter="url(#glow-soft)">
+      <!-- Strand 1 (left-winding) -->
+      <path d="M 12 8 C 30 20, 30 35, 12 48 C -6 61, -6 76, 12 88 C 30 100, 30 115, 12 128"
+            fill="none" stroke="url(#dna1)" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- Strand 2 (right-winding) -->
+      <path d="M 28 8 C 10 20, 10 35, 28 48 C 46 61, 46 76, 28 88 C 10 100, 10 115, 28 128"
+            fill="none" stroke="url(#dna2)" stroke-width="3.5" stroke-linecap="round"/>
+
+      <!-- Base pair rungs -->
+      <line x1="16" y1="15" x2="24" y2="15" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+      <line x1="9" y1="28" x2="31" y2="28" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      <line x1="7" y1="42" x2="33" y2="42" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+      <line x1="12" y1="55" x2="28" y2="55" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="7" y1="68" x2="33" y2="68" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+      <line x1="9" y1="82" x2="31" y2="82" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      <line x1="14" y1="95" x2="26" y2="95" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="7" y1="108" x2="33" y2="108" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+      <line x1="12" y1="120" x2="28" y2="120" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+
+      <!-- Node dots on the helix -->
+      <circle cx="12" cy="8" r="3" fill="#c084fc" opacity="0.9"/>
+      <circle cx="28" cy="8" r="3" fill="#a855f7" opacity="0.9"/>
+      <circle cx="12" cy="48" r="3" fill="#c084fc" opacity="0.8"/>
+      <circle cx="28" cy="48" r="3" fill="#a855f7" opacity="0.8"/>
+      <circle cx="12" cy="88" r="3" fill="#c084fc" opacity="0.7"/>
+      <circle cx="28" cy="88" r="3" fill="#a855f7" opacity="0.7"/>
+      <circle cx="12" cy="128" r="2.5" fill="#c084fc" opacity="0.5"/>
+      <circle cx="28" cy="128" r="2.5" fill="#a855f7" opacity="0.5"/>
+    </g>
   </g>
 
   <!-- Title -->
-  <text x="280" y="135" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="56" font-weight="700" fill="white" letter-spacing="-1">claude-dna</text>
+  <text x="280" y="128" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="54" font-weight="700" fill="white" letter-spacing="-1">claude-dna</text>
 
   <!-- Subtitle -->
-  <text x="280" y="172" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" fill="#a5a3b5">Extract, export, and import your complete project DNA</text>
+  <text x="280" y="164" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#a5a3b5">Extract, export, and import your complete project DNA</text>
 
-  <!-- Tags -->
-  <g transform="translate(280, 200)">
-    <!-- Claude Code Plugin -->
-    <rect x="0" y="0" width="140" height="28" rx="14" fill="#7c3aed" opacity="0.3"/>
-    <rect x="0" y="0" width="140" height="28" rx="14" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.5"/>
+  <!-- Tags row -->
+  <g transform="translate(280, 190)">
+    <rect x="0" y="0" width="140" height="28" rx="14" fill="#7c3aed" opacity="0.25"/>
+    <rect x="0" y="0" width="140" height="28" rx="14" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
     <text x="70" y="18" font-family="system-ui, sans-serif" font-size="12" fill="#c4b5fd" text-anchor="middle" font-weight="500">Claude Code Plugin</text>
 
-    <!-- 9 Commands -->
-    <rect x="155" y="0" width="110" height="28" rx="14" fill="#3b82f6" opacity="0.3"/>
-    <rect x="155" y="0" width="110" height="28" rx="14" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+    <rect x="155" y="0" width="110" height="28" rx="14" fill="#3b82f6" opacity="0.25"/>
+    <rect x="155" y="0" width="110" height="28" rx="14" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
     <text x="210" y="18" font-family="system-ui, sans-serif" font-size="12" fill="#93c5fd" text-anchor="middle" font-weight="500">9 Commands</text>
 
-    <!-- 10 Categories -->
-    <rect x="280" y="0" width="120" height="28" rx="14" fill="#f59e0b" opacity="0.3"/>
-    <rect x="280" y="0" width="120" height="28" rx="14" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+    <rect x="280" y="0" width="120" height="28" rx="14" fill="#f59e0b" opacity="0.25"/>
+    <rect x="280" y="0" width="120" height="28" rx="14" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
     <text x="340" y="18" font-family="system-ui, sans-serif" font-size="12" fill="#fcd34d" text-anchor="middle" font-weight="500">10 Categories</text>
 
-    <!-- 0 Dependencies -->
-    <rect x="415" y="0" width="130" height="28" rx="14" fill="#22c55e" opacity="0.3"/>
-    <rect x="415" y="0" width="130" height="28" rx="14" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.5"/>
+    <rect x="415" y="0" width="130" height="28" rx="14" fill="#22c55e" opacity="0.25"/>
+    <rect x="415" y="0" width="130" height="28" rx="14" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.4"/>
     <text x="480" y="18" font-family="system-ui, sans-serif" font-size="12" fill="#86efac" text-anchor="middle" font-weight="500">0 Dependencies</text>
   </g>
 
-  <!-- Right side - flow diagram -->
-  <g transform="translate(830, 85)">
-    <rect x="0" y="0" width="120" height="36" rx="8" fill="white" opacity="0.08" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
-    <text x="60" y="23" font-family="system-ui, sans-serif" font-size="13" fill="#d4d0e0" text-anchor="middle">Your Project</text>
+  <!-- Right side flow diagram -->
+  <g transform="translate(830, 80)">
+    <!-- Project box -->
+    <rect x="0" y="0" width="110" height="34" rx="8" fill="white" opacity="0.06" stroke="white" stroke-width="0.5" stroke-opacity="0.12"/>
+    <text x="55" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#b0adc0" text-anchor="middle">Your Project</text>
 
-    <line x1="120" y1="18" x2="155" y2="18" stroke="#7c3aed" stroke-width="1.5" opacity="0.6"/>
-    <text x="137" y="12" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa" text-anchor="middle">extract</text>
+    <!-- Arrow 1 -->
+    <line x1="110" y1="17" x2="140" y2="17" stroke="#7c3aed" stroke-width="1.5" opacity="0.5"/>
+    <polygon points="138,13 145,17 138,21" fill="#7c3aed" opacity="0.5"/>
+    <text x="127" y="10" font-family="system-ui, sans-serif" font-size="8" fill="#8b5cf6" text-anchor="middle">extract</text>
 
-    <rect x="155" y="0" width="100" height="36" rx="8" fill="#7c3aed" opacity="0.25" stroke="#7c3aed" stroke-width="1" stroke-opacity="0.5"/>
-    <text x="205" y="23" font-family="system-ui, sans-serif" font-size="13" fill="#c4b5fd" text-anchor="middle" font-weight="600">dna.json</text>
+    <!-- DNA box (highlighted) -->
+    <rect x="145" y="0" width="90" height="34" rx="8" fill="#7c3aed" opacity="0.2" stroke="#7c3aed" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="190" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#c4b5fd" text-anchor="middle" font-weight="600">dna.json</text>
 
-    <line x1="255" y1="18" x2="290" y2="18" stroke="#7c3aed" stroke-width="1.5" opacity="0.6"/>
-    <text x="272" y="12" font-family="system-ui, sans-serif" font-size="9" fill="#a78bfa" text-anchor="middle">apply</text>
+    <!-- Arrow 2 -->
+    <line x1="235" y1="17" x2="265" y2="17" stroke="#7c3aed" stroke-width="1.5" opacity="0.5"/>
+    <polygon points="263,13 270,17 263,21" fill="#7c3aed" opacity="0.5"/>
+    <text x="252" y="10" font-family="system-ui, sans-serif" font-size="8" fill="#8b5cf6" text-anchor="middle">apply</text>
 
-    <rect x="290" y="0" width="120" height="36" rx="8" fill="white" opacity="0.08" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
-    <text x="350" y="23" font-family="system-ui, sans-serif" font-size="13" fill="#d4d0e0" text-anchor="middle">New Project</text>
+    <!-- New project boxes -->
+    <rect x="270" y="0" width="110" height="34" rx="8" fill="white" opacity="0.06" stroke="white" stroke-width="0.5" stroke-opacity="0.12"/>
+    <text x="325" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#b0adc0" text-anchor="middle">New Project</text>
 
-    <!-- Second row -->
-    <rect x="290" y="55" width="120" height="36" rx="8" fill="white" opacity="0.08" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
-    <text x="350" y="78" font-family="system-ui, sans-serif" font-size="13" fill="#d4d0e0" text-anchor="middle">Another One</text>
+    <rect x="270" y="48" width="110" height="34" rx="8" fill="white" opacity="0.04" stroke="white" stroke-width="0.5" stroke-opacity="0.08"/>
+    <text x="325" y="70" font-family="system-ui, sans-serif" font-size="12" fill="#807d90" text-anchor="middle">Another One</text>
 
-    <line x1="255" y1="36" x2="290" y2="73" stroke="#7c3aed" stroke-width="1" opacity="0.4"/>
+    <rect x="270" y="96" width="110" height="34" rx="8" fill="white" opacity="0.025" stroke="white" stroke-width="0.5" stroke-opacity="0.05"/>
+    <text x="325" y="118" font-family="system-ui, sans-serif" font-size="12" fill="#5c5a6b" text-anchor="middle">And More...</text>
+
+    <!-- Branching lines -->
+    <line x1="235" y1="34" x2="270" y2="65" stroke="#7c3aed" stroke-width="1" opacity="0.3"/>
+    <line x1="235" y1="34" x2="270" y2="113" stroke="#7c3aed" stroke-width="1" opacity="0.2"/>
   </g>
 
   <!-- Bottom accent bar -->
-  <rect y="292" width="1200" height="8" fill="url(#bar)" rx="0"/>
+  <rect y="292" width="1200" height="8" fill="url(#bar)"/>
 </svg>
