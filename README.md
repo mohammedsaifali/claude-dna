@@ -60,6 +60,34 @@ Think of it like:
 
 ---
 
+## See It In Action
+
+We extracted DNA from **AIxMinutes** (a real SaaS product) and applied it to a completely different app — **FitPulse** (a fitness landing page). Same design language, zero manual setup.
+
+### Source: AIxMinutes
+
+<p align="center">
+  <img src="assets/source-aixminutes.png" alt="AIxMinutes — the source project" width="700" />
+</p>
+
+> Purple brand, Instrument Serif italic accents, glass morphism navbar, Geist fonts, shadcn/ui components
+
+### DNA Applied: FitPulse
+
+<p align="center">
+  <img src="assets/applied-fitpulse.png" alt="FitPulse hero — DNA applied" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/applied-fitpulse-2.png" alt="FitPulse sections — DNA applied" width="700" />
+</p>
+
+> Different product, identical design language. Same purple brand, same italic serif accents, same button styles, same section patterns. Footer reads: *"Built with DNA from AIxMinutes."*
+
+**One command extracted it. One command applied it. Zero manual CSS.**
+
+---
+
 ## Installation
 
 ### From Marketplace (recommended)
