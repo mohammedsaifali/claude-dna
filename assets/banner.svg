@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="838" height="280" viewBox="0 0 838 280">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#110a24"/>
+      <stop offset="40%" style="stop-color:#1e1040"/>
+      <stop offset="100%" style="stop-color:#150d30"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="33%" style="stop-color:#a855f7"/>
+      <stop offset="66%" style="stop-color:#e879f9"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="d1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="d2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c084fc"/>
+      <stop offset="100%" style="stop-color:#e9d5ff"/>
+    </linearGradient>
+    <filter id="gl">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip"><rect width="838" height="274" rx="12"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="838" height="274" rx="12" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g opacity="0.035" clip-path="url(#clip)">
+    <line x1="0" y1="55" x2="838" y2="55" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="110" x2="838" y2="110" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="165" x2="838" y2="165" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="220" x2="838" y2="220" stroke="white" stroke-width="0.5"/>
+    <line x1="140" y1="0" x2="140" y2="280" stroke="white" stroke-width="0.5"/>
+    <line x1="280" y1="0" x2="280" y2="280" stroke="white" stroke-width="0.5"/>
+    <line x1="420" y1="0" x2="420" y2="280" stroke="white" stroke-width="0.5"/>
+    <line x1="560" y1="0" x2="560" y2="280" stroke="white" stroke-width="0.5"/>
+    <line x1="700" y1="0" x2="700" y2="280" stroke="white" stroke-width="0.5"/>
+  </g>
+
+  <!-- Glow behind logo -->
+  <circle cx="80" cy="110" r="65" fill="#7c3aed" opacity="0.1"/>
+  <circle cx="80" cy="110" r="38" fill="#a855f7" opacity="0.06"/>
+
+  <!-- === Claude symbol + DNA extraction logo === -->
+  <g transform="translate(30, 48)">
+    <!-- Claude symbol -->
+    <g transform="scale(0.1)" opacity="0.9">
+      <path fill="#d97757" d="M 233.96 800.21 L 468.64 668.54 L 472.59 657.1 L 468.64 650.74 L 457.21 650.74 L 417.99 648.32 L 283.89 644.7 L 167.6 639.87 L 54.93 633.83 L 26.58 627.79 L 0 592.75 L 2.74 575.28 L 26.58 559.25 L 60.72 562.23 L 136.19 567.38 L 249.42 575.19 L 331.57 580.03 L 453.26 592.67 L 472.59 592.67 L 475.33 584.86 L 468.72 580.03 L 463.57 575.19 L 346.39 495.79 L 219.54 411.87 L 153.1 363.54 L 117.18 339.06 L 99.06 316.11 L 91.25 266.01 L 123.87 230.09 L 167.68 233.07 L 178.87 236.05 L 223.25 270.2 L 318.04 343.57 L 441.83 434.74 L 459.95 449.8 L 467.19 444.64 L 468.08 441.02 L 459.95 427.41 L 392.62 305.72 L 320.78 181.93 L 288.81 130.63 L 280.35 99.87 C 277.37 87.22 275.19 76.59 275.19 63.62 L 312.32 13.21 L 332.86 6.6 L 382.39 13.21 L 403.25 31.33 L 434.01 101.72 L 483.87 212.54 L 561.18 363.22 L 583.81 407.92 L 595.89 449.32 L 600.4 461.96 L 608.21 461.96 L 608.21 454.71 L 614.58 369.83 L 626.34 265.61 L 637.77 131.52 L 641.72 93.75 L 660.4 48.48 L 697.53 24 L 726.52 37.85 L 750.36 72 L 747.06 94.07 L 732.89 186.2 L 705.1 330.52 L 686.98 427.17 L 697.53 427.17 L 709.61 415.09 L 758.5 350.17 L 840.64 247.49 L 876.89 206.74 L 919.17 161.72 L 946.31 140.3 L 997.61 140.3 L 1035.38 196.43 L 1018.47 254.42 L 965.64 321.42 L 921.83 378.2 L 859.01 462.77 L 819.79 530.42 L 823.41 535.81 L 832.75 534.93 L 974.66 504.72 L 1051.33 490.87 L 1142.82 475.17 L 1184.21 494.5 L 1188.72 514.15 L 1172.46 554.34 L 1074.6 578.5 L 959.84 601.45 L 788.94 641.88 L 786.85 643.41 L 789.26 646.39 L 866.26 653.64 L 899.19 655.41 L 979.81 655.41 L 1129.93 666.6 L 1169.15 692.54 L 1192.67 724.27 L 1188.72 748.43 L 1128.32 779.19 L 1046.82 759.87 L 856.59 714.6 L 791.36 698.34 L 782.34 698.34 L 782.34 703.73 L 836.7 756.89 L 936.32 846.85 L 1061.07 962.82 L 1067.44 991.49 L 1051.41 1014.12 L 1034.5 1011.7 L 924.89 929.23 L 882.6 892.11 L 786.85 811.49 L 780.48 811.49 L 780.48 819.95 L 802.55 852.24 L 919.09 1027.41 L 925.13 1081.13 L 916.67 1098.6 L 886.47 1109.15 L 853.29 1103.11 L 785.07 1007.36 L 714.68 899.52 L 657.91 802.87 L 650.98 806.82 L 617.48 1167.7 L 601.77 1186.15 L 565.53 1200 L 535.33 1177.05 L 519.3 1139.92 L 535.33 1066.55 L 554.66 970.79 L 570.36 894.68 L 584.54 800.13 L 592.99 768.72 L 592.43 766.63 L 585.5 767.52 L 514.23 865.37 L 405.83 1011.87 L 320.05 1103.68 L 299.52 1111.81 L 263.92 1093.37 L 267.22 1060.43 L 287.11 1031.11 L 405.83 880.11 L 477.42 786.52 L 523.65 732.48 L 523.33 724.67 L 520.59 724.67 L 205.29 929.4 L 149.15 936.64 L 124.99 914.01 L 127.97 876.89 L 139.41 864.81 L 234.2 799.57 Z"/>
+    </g>
+
+    <!-- DNA helix extracting out -->
+    <g filter="url(#gl)">
+      <path d="M 75 50 C 90 42, 92 34, 84 24 C 76 14, 84 6, 96 0" fill="none" stroke="url(#d1)" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+      <path d="M 75 50 C 82 42, 78 34, 92 24 C 106 14, 96 6, 108 0" fill="none" stroke="url(#d2)" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+      <line x1="82" y1="37" x2="88" y2="37" stroke="#e9d5ff" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+      <line x1="82" y1="24" x2="94" y2="24" stroke="#e9d5ff" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+      <line x1="87" y1="12" x2="100" y2="12" stroke="#e9d5ff" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+    </g>
+    <g filter="url(#gl)">
+      <path d="M 85 82 C 100 84, 108 90, 116 84 C 124 78, 130 82, 138 76" fill="none" stroke="url(#d1)" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+      <path d="M 85 82 C 97 88, 106 92, 116 90 C 126 88, 132 86, 140 82" fill="none" stroke="url(#d2)" stroke-width="2.5" stroke-linecap="round" opacity="0.65"/>
+      <line x1="105" y1="86" x2="108" y2="90" stroke="#e9d5ff" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+      <line x1="122" y1="82" x2="123" y2="87" stroke="#e9d5ff" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+    </g>
+
+    <!-- Particles -->
+    <circle cx="72" cy="58" r="1.5" fill="#a855f7" opacity="0.7"/>
+    <circle cx="80" cy="48" r="1.2" fill="#c084fc" opacity="0.8"/>
+    <circle cx="68" cy="44" r="0.8" fill="#e9d5ff" opacity="0.6"/>
+    <circle cx="90" cy="76" r="1.2" fill="#c084fc" opacity="0.6"/>
+  </g>
+
+  <!-- Title -->
+  <text x="195" y="100" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="46" font-weight="700" fill="white" letter-spacing="-1">claude-dna</text>
+
+  <!-- Subtitle -->
+  <text x="195" y="130" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#a5a3b5">Extract, export, and import your complete project DNA</text>
+
+  <!-- Tags -->
+  <g transform="translate(195, 152)">
+    <rect x="0" y="0" width="124" height="24" rx="12" fill="#7c3aed" opacity="0.25" stroke="#7c3aed" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="62" y="16" font-family="system-ui, sans-serif" font-size="11" fill="#c4b5fd" text-anchor="middle" font-weight="500">Claude Code Plugin</text>
+
+    <rect x="134" y="0" width="92" height="24" rx="12" fill="#3b82f6" opacity="0.25" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="180" y="16" font-family="system-ui, sans-serif" font-size="11" fill="#93c5fd" text-anchor="middle" font-weight="500">9 Commands</text>
+
+    <rect x="236" y="0" width="104" height="24" rx="12" fill="#f59e0b" opacity="0.25" stroke="#f59e0b" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="288" y="16" font-family="system-ui, sans-serif" font-size="11" fill="#fcd34d" text-anchor="middle" font-weight="500">10 Categories</text>
+
+    <rect x="350" y="0" width="112" height="24" rx="12" fill="#22c55e" opacity="0.25" stroke="#22c55e" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="406" y="16" font-family="system-ui, sans-serif" font-size="11" fill="#86efac" text-anchor="middle" font-weight="500">0 Dependencies</text>
+  </g>
+
+  <!-- Right side flow -->
+  <g transform="translate(550, 58)">
+    <rect x="0" y="0" width="90" height="28" rx="6" fill="white" opacity="0.06" stroke="white" stroke-width="0.5" stroke-opacity="0.12"/>
+    <text x="45" y="18" font-family="system-ui, sans-serif" font-size="11" fill="#b0adc0" text-anchor="middle">Your Project</text>
+
+    <line x1="90" y1="14" x2="112" y2="14" stroke="#7c3aed" stroke-width="1.2" opacity="0.5"/>
+    <polygon points="110,10 116,14 110,18" fill="#7c3aed" opacity="0.5"/>
+    <text x="103" y="8" font-family="system-ui, sans-serif" font-size="7" fill="#8b5cf6" text-anchor="middle">extract</text>
+
+    <rect x="116" y="0" width="72" height="28" rx="6" fill="#7c3aed" opacity="0.2" stroke="#7c3aed" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="152" y="18" font-family="system-ui, sans-serif" font-size="11" fill="#c4b5fd" text-anchor="middle" font-weight="600">dna.json</text>
+
+    <line x1="188" y1="14" x2="210" y2="14" stroke="#7c3aed" stroke-width="1.2" opacity="0.5"/>
+    <polygon points="208,10 214,14 208,18" fill="#7c3aed" opacity="0.5"/>
+    <text x="201" y="8" font-family="system-ui, sans-serif" font-size="7" fill="#8b5cf6" text-anchor="middle">apply</text>
+
+    <rect x="214" y="0" width="90" height="28" rx="6" fill="white" opacity="0.06" stroke="white" stroke-width="0.5" stroke-opacity="0.12"/>
+    <text x="259" y="18" font-family="system-ui, sans-serif" font-size="11" fill="#b0adc0" text-anchor="middle">New Project</text>
+
+    <rect x="214" y="38" width="90" height="28" rx="6" fill="white" opacity="0.04" stroke="white" stroke-width="0.5" stroke-opacity="0.08"/>
+    <text x="259" y="56" font-family="system-ui, sans-serif" font-size="11" fill="#807d90" text-anchor="middle">Another One</text>
+
+    <rect x="214" y="76" width="90" height="28" rx="6" fill="white" opacity="0.025" stroke="white" stroke-width="0.5" stroke-opacity="0.05"/>
+    <text x="259" y="94" font-family="system-ui, sans-serif" font-size="11" fill="#5c5a6b" text-anchor="middle">And More...</text>
+
+    <line x1="188" y1="28" x2="214" y2="52" stroke="#7c3aed" stroke-width="0.8" opacity="0.3"/>
+    <line x1="188" y1="28" x2="214" y2="90" stroke="#7c3aed" stroke-width="0.8" opacity="0.2"/>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect y="270" width="838" height="10" fill="url(#bar)"/>
+</svg>
