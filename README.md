@@ -2,6 +2,9 @@
   <img src="assets/banner.png" alt="Claude DNA — Extract, export, and import your complete project DNA" width="100%" />
 </p>
 
+<h1 align="center">Claude DNA</h1>
+<p align="center"><strong>Extract, export, and import your complete project DNA.</strong><br/>Like a photographer's preset — but for your entire builder identity.</p>
+
 <p align="center">
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-22c55e?style=flat-square" alt="MIT License" /></a>
   <a href="#-installation"><img src="https://img.shields.io/badge/Setup-30_seconds-3b82f6?style=flat-square" alt="Setup" /></a>
