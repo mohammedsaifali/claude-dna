@@ -1,0 +1,13 @@
+{
+  "name": "claude-dna",
+  "description": "Extract, export, and import your complete project DNA — tech stack, design tokens, fonts, colors, architecture patterns, and component conventions. Like a photographer's preset, but for your entire builder identity.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Saif & Claude",
+    "url": "https://github.com/cp-saif"
+  },
+  "repository": "https://github.com/cp-saif/claude-dna",
+  "license": "MIT",
+  "commands": "./commands",
+  "skills": "./skills"
+}

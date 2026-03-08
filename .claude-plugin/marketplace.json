@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    {
+      "name": "claude-dna",
+      "description": "Extract, export, and import your complete project DNA — tech stack, design tokens, fonts, colors, architecture, and conventions. Like a photographer's preset, but for your builder identity.",
+      "version": "1.0.0",
+      "path": ".",
+      "author": {
+        "name": "Saif & Claude",
+        "url": "https://github.com/cp-saif"
+      },
+      "tags": [
+        "design-system",
+        "tech-stack",
+        "boilerplate",
+        "preset",
+        "scaffold",
+        "export",
+        "import",
+        "design-tokens",
+        "project-template"
+      ],
+      "category": "Productivity"
+    }
+  ]
+}
