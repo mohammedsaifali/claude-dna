@@ -8,6 +8,7 @@
   <a href="#-commands"><img src="https://img.shields.io/badge/Commands-9-7c3aed?style=flat-square" alt="Commands" /></a>
   <a href="#-what-gets-captured"><img src="https://img.shields.io/badge/Captures-10_Categories-f59e0b?style=flat-square" alt="Categories" /></a>
   <a href="https://github.com/mohammedsaifali/claude-dna/stargazers"><img src="https://img.shields.io/github/stars/mohammedsaifali/claude-dna?style=flat-square&logo=github" alt="Stars" /></a>
+  <a href="https://buymeacoffee.com/indiesaif"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" /></a>
 </p>
 
 ---
@@ -338,6 +339,10 @@ git push origin feat/my-feature
 - Built on the [Claude Code Plugin System](https://docs.anthropic.com/en/docs/claude-code) by Anthropic
 
 ---
+
+<p align="center">
+  <a href="https://buymeacoffee.com/indiesaif"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" /></a>
+</p>
 
 <p align="center">
   <strong>Build once. Apply everywhere.</strong><br/>
