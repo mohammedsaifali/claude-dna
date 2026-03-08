@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="https://img.icons8.com/3d-fluency/94/dna-helix.png" width="80" alt="Claude DNA Logo" />
-</p>
-
-<h1 align="center">Claude DNA</h1>
+<h1 align="center">🧬 Claude DNA</h1>
 
 <p align="center">
   <strong>Extract, export, and import your complete project DNA.</strong><br/>
@@ -10,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="#installation"><img src="https://img.shields.io/badge/Claude_Code-Plugin-7c3aed?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiPjxwYXRoIGQ9Im0xMiAzLTEuOTEyIDUuODEzYTIgMiAwIDAgMS0xLjI3NSAxLjI3NUwzIDEybDUuODEzIDEuOTEyYTIgMiAwIDAgMSAxLjI3NSAxLjI3NUwxMiAyMWwxLjkxMi01LjgxM2EyIDIgMCAwIDEgMS4yNzUtMS4yNzVMMjEgMTJsLTUuODEzLTEuOTEyYTIgMiAwIDAgMS0xLjI3NS0xLjI3NUwxMiAzWiIvPjwvc3ZnPg==&logoColor=white" alt="Claude Code Plugin" /></a>
+  <a href="#installation"><img src="https://img.shields.io/badge/Claude_Code-Plugin-7c3aed?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code Plugin" /></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge" alt="MIT License" /></a>
   <a href="#commands"><img src="https://img.shields.io/badge/Commands-9-3b82f6?style=for-the-badge" alt="9 Commands" /></a>
   <a href="#what-gets-captured"><img src="https://img.shields.io/badge/Captures-10_Categories-f59e0b?style=for-the-badge" alt="10 Categories" /></a>
