@@ -2,7 +2,7 @@
   <img src="assets/banner.png" alt="Claude DNA — Extract, export, and import your complete project DNA" width="100%" />
 </p>
 
-<h1 align="center">Claude DNA</h1>
+<h1 align="center"><img src="assets/logo.svg" width="40" height="40" alt="logo" style="vertical-align: middle;" /> Claude DNA</h1>
 <p align="center"><strong>Extract, export, and import your complete project DNA.</strong><br/>Like a photographer's preset — but for your entire builder identity.</p>
 
 <p align="center">
