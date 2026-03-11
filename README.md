@@ -88,7 +88,7 @@ We extracted DNA from **AIxMinutes** (a production SaaS) and applied it to **Fit
 
 ## 📦 Installation
 
-> **Prerequisites:** [Claude Code](https://claude.ai/code) v1.0.33 or later. No other dependencies.
+> **Prerequisites:** [Claude Code](https://claude.ai/code) v1.0.33 or later (`claude --version` to check). No other dependencies.
 
 ### Option 1: Plugin Marketplace (Recommended)
 
@@ -98,32 +98,34 @@ Two steps — add the marketplace catalog, then install the plugin from it:
 # Step 1: Add the marketplace (registers the catalog)
 /plugin marketplace add mohammedsaifali/claude-dna
 
-# Step 2: Install the plugin globally (available in ALL projects)
-/plugin install claude-dna@claude-dna --scope user
+# Step 2: Install the plugin (available in ALL projects by default)
+/plugin install claude-dna@claude-dna
 ```
+
+The install format is `<plugin-name>@<marketplace-name>`. Both are `claude-dna` here.
 
 After install, all `/claude-dna:*` commands are immediately available in every project. Run `/claude-dna:status` to verify.
 
-> **Scope matters:** `--scope user` installs system-wide (all projects). Without it, the plugin may only work in the current project. See [Install Scopes](#install-scopes) below.
+> **Tip:** The default install scope is `user` (system-wide). If you only want the plugin in the current project, add `--scope project`. See [Install Scopes](#install-scopes) below.
 
 ### Option 2: Local Development / Testing
 
-Clone the repo and point Claude Code to it directly:
+Clone the repo and load it directly with the `--plugin-dir` flag:
 
 ```bash
 git clone https://github.com/mohammedsaifali/claude-dna.git ~/.claude/plugins/claude-dna
 claude --plugin-dir ~/.claude/plugins/claude-dna
 ```
 
-This loads the plugin for the current session. To test with multiple plugins:
+This loads the plugin for **the current session only**. To load multiple plugins:
 
 ```bash
 claude --plugin-dir ~/.claude/plugins/claude-dna --plugin-dir ~/.claude/plugins/other-plugin
 ```
 
-### Option 3: Copy Into Project
+### Option 3: Copy Into Project (No Plugin System)
 
-If you only want the skills and commands without the full plugin system:
+Copy the skills and commands directly into your project's `.claude/` directory:
 
 ```bash
 git clone https://github.com/mohammedsaifali/claude-dna.git /tmp/claude-dna
@@ -131,9 +133,11 @@ cp -r /tmp/claude-dna/skills/project-dna your-project/.claude/skills/
 cp -r /tmp/claude-dna/commands/* your-project/.claude/commands/
 ```
 
-> **Note:** With this method, commands are available as `/extract`, `/apply`, etc. (without the `claude-dna:` prefix).
+> **Note:** With this method, commands are available as `/extract`, `/apply`, etc. (without the `claude-dna:` namespace prefix), and only in that specific project.
 
 ### Verify Installation
+
+Run any command to confirm the plugin is loaded:
 
 ```
 > /claude-dna:status
@@ -146,21 +150,27 @@ Get started:
   /claude-dna:list       See your saved presets
 ```
 
+You can also open the plugin manager with `/plugin` and check the **Installed** tab, or run `/debug` to see plugin loading details.
+
 ### Install Scopes
 
-Claude Code plugins can be installed at different scopes:
+Claude Code plugins can be installed at different scopes. The default is `user` (system-wide):
 
 | Scope | Flag | Where It Works | Stored In |
 |:------|:-----|:---------------|:----------|
-| **User** (recommended) | `--scope user` | All projects, every session | `~/.claude/plugins/` |
-| **Project** | `--scope project` | Only the current project | `.claude/plugins/` in project root |
+| **User** (default) | `--scope user` | All projects, every session | `~/.claude/settings.json` |
+| **Project** | `--scope project` | Only the current project, shared via git | `.claude/settings.json` in project root |
+| **Local** | `--scope local` | Only the current project, gitignored | `.claude/settings.local.json` in project root |
 
 ```bash
-# Install for all projects (recommended)
-/plugin install claude-dna@claude-dna --scope user
+# Install for all projects (default — same as omitting --scope)
+/plugin install claude-dna@claude-dna
 
-# Install for current project only
+# Install for current project only (shared with team via git)
 /plugin install claude-dna@claude-dna --scope project
+
+# Install for current project only (gitignored, personal)
+/plugin install claude-dna@claude-dna --scope local
 ```
 
 **Already installed with wrong scope?** Uninstall and reinstall:
@@ -176,21 +186,26 @@ Claude Code plugins can be installed at different scopes:
 # Update to latest version
 /plugin marketplace update claude-dna
 
-# Temporarily disable
+# Temporarily disable (without uninstalling)
 /plugin disable claude-dna@claude-dna
 
 # Re-enable
 /plugin enable claude-dna@claude-dna
 
-# Uninstall
+# Uninstall the plugin
 /plugin uninstall claude-dna@claude-dna
 
-# Remove the marketplace catalog entirely
+# Remove the marketplace catalog entirely (also uninstalls its plugins)
 /plugin marketplace remove claude-dna
+
+# List all configured marketplaces
+/plugin marketplace list
 
 # Reload plugins without restarting Claude Code
 /reload-plugins
 ```
+
+> **Shortcut:** `/plugin market` works as a shorthand for `/plugin marketplace`.
 
 ---
 
@@ -413,21 +428,29 @@ Single portable JSON at `.project-dna/dna.json`. Human-readable, version-control
 ```
 claude-dna/
 ├── .claude-plugin/
-│   ├── plugin.json              # Plugin manifest
-│   └── marketplace.json         # Distribution config
-├── commands/                    # 9 slash commands
-│   ├── extract.md    apply.md    status.md
-│   ├── export.md     import.md   list.md
-│   └── audit.md      diff.md     evolve.md
+│   ├── plugin.json              # Plugin manifest (name, version, paths)
+│   └── marketplace.json         # Marketplace distribution config
+├── commands/                    # 9 slash commands (become /claude-dna:*)
+│   ├── extract.md               # /claude-dna:extract
+│   ├── apply.md                 # /claude-dna:apply
+│   ├── status.md                # /claude-dna:status
+│   ├── export.md                # /claude-dna:export
+│   ├── import.md                # /claude-dna:import
+│   ├── list.md                  # /claude-dna:list
+│   ├── audit.md                 # /claude-dna:audit
+│   ├── diff.md                  # /claude-dna:diff
+│   └── evolve.md                # /claude-dna:evolve
 ├── skills/
 │   └── project-dna/
-│       ├── SKILL.md             # Core brain
+│       ├── SKILL.md             # Core skill (auto-invoked by Claude)
 │       └── references/
-│           └── dna-schema.md    # Full JSON schema
+│           └── dna-schema.md    # Full DNA JSON schema reference
 ├── assets/                      # Banner + screenshots
 ├── README.md
 └── LICENSE                      # MIT
 ```
+
+> Commands in `commands/` are namespaced by the plugin name from `plugin.json`. Since `name` is `claude-dna`, each command becomes `/claude-dna:<filename>`. The skill in `skills/project-dna/` provides background knowledge that Claude loads automatically when relevant.
 
 ---
 
@@ -436,38 +459,34 @@ claude-dna/
 <details>
 <summary><strong>"Marketplace added but commands not found"</strong></summary>
 
-The marketplace is just the catalog. You need to install the plugin from it:
+The marketplace is just the catalog — it tells Claude Code what plugins are available. You still need to install the plugin:
 
 ```bash
-/plugin install claude-dna@claude-dna --scope user
+/plugin install claude-dna@claude-dna
 ```
 
-The first `claude-dna` is the plugin name, the second is the marketplace name.
+Format: `<plugin-name>@<marketplace-name>`. Both are `claude-dna` for this plugin.
 
 </details>
 
 <details>
 <summary><strong>Commands work in one project but not others</strong></summary>
 
-The plugin was installed with project scope. Reinstall with user scope to make it available everywhere:
+The plugin was installed with `--scope project`, so it only works in that project. Reinstall with user scope (the default) to make it available everywhere:
 
 ```bash
 /plugin uninstall claude-dna@claude-dna
-/plugin install claude-dna@claude-dna --scope user
+/plugin install claude-dna@claude-dna
 ```
+
+The default `--scope user` installs system-wide.
 
 </details>
 
 <details>
 <summary><strong>"Invalid schema" error when adding marketplace</strong></summary>
 
-Make sure you're on the latest version. The marketplace format requires a top-level `name` and `owner` field. Update to the latest:
-
-```bash
-/plugin marketplace update claude-dna
-```
-
-Or remove and re-add:
+This was fixed in a recent update. Remove the old marketplace and re-add:
 
 ```bash
 /plugin marketplace remove claude-dna
@@ -480,24 +499,48 @@ Or remove and re-add:
 <details>
 <summary><strong>Commands not appearing after install</strong></summary>
 
-Try reloading plugins:
+1. Reload plugins without restarting:
 
 ```bash
 /reload-plugins
 ```
 
-If that doesn't work, verify the plugin is installed and enabled:
+2. If still not working, open the plugin manager and check the **Errors** tab:
 
 ```bash
-/plugin marketplace list
+/plugin
 ```
+
+3. For detailed diagnostics, enable debug mode:
+
+```bash
+/debug
+```
+
+This shows plugin loading details, manifest errors, and command registration.
 
 </details>
 
 <details>
 <summary><strong>"No Project DNA found" when running commands</strong></summary>
 
-Most commands require a `.project-dna/dna.json` file in your project. Run `/claude-dna:extract` first to create one, or `/claude-dna:import` to bring in an existing preset.
+Most commands need a `.project-dna/dna.json` file in the current project. Create one:
+
+- `/claude-dna:extract` — scan the current project and generate DNA
+- `/claude-dna:import` — import an existing preset from file, URL, or your global library
+
+</details>
+
+<details>
+<summary><strong>Plugin not updating</strong></summary>
+
+Third-party marketplaces don't auto-update by default. Manually update:
+
+```bash
+/plugin marketplace update claude-dna
+```
+
+To enable auto-updates: open `/plugin` > **Marketplaces** tab > select `claude-dna` > enable auto-update.
 
 </details>
 
@@ -510,11 +553,17 @@ Most commands require a `.project-dna/dna.json` file in your project. Run `/clau
 git clone https://github.com/mohammedsaifali/claude-dna.git
 cd claude-dna
 
-# Test your changes in Claude Code
+# Load plugin in Claude Code for testing (current session only)
 claude --plugin-dir .
 
-# Validate plugin structure
+# Validate plugin structure (CLI)
 claude plugin validate .
+
+# Or validate from inside Claude Code (TUI)
+# /plugin validate .
+
+# Reload after making changes (no restart needed)
+# /reload-plugins
 
 # Submit a PR
 git checkout -b feat/my-feature
