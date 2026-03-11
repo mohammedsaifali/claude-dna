@@ -91,6 +91,7 @@ We extracted DNA from **AIxMinutes** (a production SaaS) and applied it to **Fit
 **Plugin Marketplace:**
 ```bash
 /plugin marketplace add mohammedsaifali/claude-dna
+/plugin install claude-dna@claude-dna
 ```
 
 **Clone locally:**
