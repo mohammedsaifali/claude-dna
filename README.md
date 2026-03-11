@@ -98,11 +98,13 @@ Two steps — add the marketplace catalog, then install the plugin from it:
 # Step 1: Add the marketplace (registers the catalog)
 /plugin marketplace add mohammedsaifali/claude-dna
 
-# Step 2: Install the plugin (registers the commands)
-/plugin install claude-dna@claude-dna
+# Step 2: Install the plugin globally (available in ALL projects)
+/plugin install claude-dna@claude-dna --scope user
 ```
 
-After install, all `/claude-dna:*` commands are immediately available. Run `/claude-dna:status` to verify.
+After install, all `/claude-dna:*` commands are immediately available in every project. Run `/claude-dna:status` to verify.
+
+> **Scope matters:** `--scope user` installs system-wide (all projects). Without it, the plugin may only work in the current project. See [Install Scopes](#install-scopes) below.
 
 ### Option 2: Local Development / Testing
 
@@ -142,6 +144,30 @@ Get started:
   /claude-dna:extract    Scan this project and capture its DNA
   /claude-dna:apply      Apply a preset from another project
   /claude-dna:list       See your saved presets
+```
+
+### Install Scopes
+
+Claude Code plugins can be installed at different scopes:
+
+| Scope | Flag | Where It Works | Stored In |
+|:------|:-----|:---------------|:----------|
+| **User** (recommended) | `--scope user` | All projects, every session | `~/.claude/plugins/` |
+| **Project** | `--scope project` | Only the current project | `.claude/plugins/` in project root |
+
+```bash
+# Install for all projects (recommended)
+/plugin install claude-dna@claude-dna --scope user
+
+# Install for current project only
+/plugin install claude-dna@claude-dna --scope project
+```
+
+**Already installed with wrong scope?** Uninstall and reinstall:
+
+```bash
+/plugin uninstall claude-dna@claude-dna
+/plugin install claude-dna@claude-dna --scope user
 ```
 
 ### Managing the Plugin
@@ -413,10 +439,22 @@ claude-dna/
 The marketplace is just the catalog. You need to install the plugin from it:
 
 ```bash
-/plugin install claude-dna@claude-dna
+/plugin install claude-dna@claude-dna --scope user
 ```
 
 The first `claude-dna` is the plugin name, the second is the marketplace name.
+
+</details>
+
+<details>
+<summary><strong>Commands work in one project but not others</strong></summary>
+
+The plugin was installed with project scope. Reinstall with user scope to make it available everywhere:
+
+```bash
+/plugin uninstall claude-dna@claude-dna
+/plugin install claude-dna@claude-dna --scope user
+```
 
 </details>
 
