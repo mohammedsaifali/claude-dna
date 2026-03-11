@@ -88,25 +88,83 @@ We extracted DNA from **AIxMinutes** (a production SaaS) and applied it to **Fit
 
 ## 📦 Installation
 
-**Plugin Marketplace:**
+> **Prerequisites:** [Claude Code](https://claude.ai/code) v1.0.33 or later. No other dependencies.
+
+### Option 1: Plugin Marketplace (Recommended)
+
+Two steps — add the marketplace catalog, then install the plugin from it:
+
 ```bash
+# Step 1: Add the marketplace (registers the catalog)
 /plugin marketplace add mohammedsaifali/claude-dna
+
+# Step 2: Install the plugin (registers the commands)
 /plugin install claude-dna@claude-dna
 ```
 
-**Clone locally:**
+After install, all `/claude-dna:*` commands are immediately available. Run `/claude-dna:status` to verify.
+
+### Option 2: Local Development / Testing
+
+Clone the repo and point Claude Code to it directly:
+
 ```bash
 git clone https://github.com/mohammedsaifali/claude-dna.git ~/.claude/plugins/claude-dna
 claude --plugin-dir ~/.claude/plugins/claude-dna
 ```
 
-**Copy into project:**
+This loads the plugin for the current session. To test with multiple plugins:
+
 ```bash
-cp -r claude-dna/skills/project-dna your-project/.claude/skills/
-cp -r claude-dna/commands your-project/.claude/commands/
+claude --plugin-dir ~/.claude/plugins/claude-dna --plugin-dir ~/.claude/plugins/other-plugin
 ```
 
-> **Requirements:** [Claude Code](https://claude.com/code) v1.0.33+ · No other dependencies.
+### Option 3: Copy Into Project
+
+If you only want the skills and commands without the full plugin system:
+
+```bash
+git clone https://github.com/mohammedsaifali/claude-dna.git /tmp/claude-dna
+cp -r /tmp/claude-dna/skills/project-dna your-project/.claude/skills/
+cp -r /tmp/claude-dna/commands/* your-project/.claude/commands/
+```
+
+> **Note:** With this method, commands are available as `/extract`, `/apply`, etc. (without the `claude-dna:` prefix).
+
+### Verify Installation
+
+```
+> /claude-dna:status
+
+No Project DNA found in this directory.
+
+Get started:
+  /claude-dna:extract    Scan this project and capture its DNA
+  /claude-dna:apply      Apply a preset from another project
+  /claude-dna:list       See your saved presets
+```
+
+### Managing the Plugin
+
+```bash
+# Update to latest version
+/plugin marketplace update claude-dna
+
+# Temporarily disable
+/plugin disable claude-dna@claude-dna
+
+# Re-enable
+/plugin enable claude-dna@claude-dna
+
+# Uninstall
+/plugin uninstall claude-dna@claude-dna
+
+# Remove the marketplace catalog entirely
+/plugin marketplace remove claude-dna
+
+# Reload plugins without restarting Claude Code
+/reload-plugins
+```
 
 ---
 
@@ -178,17 +236,42 @@ Done! Your project has your DNA.
 
 ## 🛠 Commands
 
-| Command | What It Does |
-|:--------|:------------|
-| **`/claude-dna:extract`** | Scan current project and capture its complete DNA |
-| **`/claude-dna:apply`** | Apply a preset — full, design-only, tech-only, or cherry-pick |
-| **`/claude-dna:status`** | Display formatted DNA summary |
-| **`/claude-dna:export`** | Save DNA to global presets (`~/.project-dna/presets/`) |
-| **`/claude-dna:import`** | Import from file path, URL, or named preset |
-| **`/claude-dna:list`** | List all saved presets |
-| **`/claude-dna:audit`** | Detect drift between project and saved DNA |
-| **`/claude-dna:diff`** | Compare two presets side-by-side |
-| **`/claude-dna:evolve`** | Accept changes and bump preset version |
+| Command | Arguments | What It Does |
+|:--------|:----------|:------------|
+| **`/claude-dna:extract`** | — | Scan current project and capture its complete DNA |
+| **`/claude-dna:apply`** | `[preset-name]` | Apply a preset — full, design-only, tech-only, or cherry-pick |
+| **`/claude-dna:status`** | — | Display formatted DNA summary |
+| **`/claude-dna:export`** | — | Save DNA to global presets (`~/.project-dna/presets/`) |
+| **`/claude-dna:import`** | `<name \| path \| url>` | Import from named preset, file path, or URL |
+| **`/claude-dna:list`** | — | List all saved presets |
+| **`/claude-dna:audit`** | — | Detect drift between project and saved DNA |
+| **`/claude-dna:diff`** | `<preset-a> [preset-b]` | Compare two presets side-by-side |
+| **`/claude-dna:evolve`** | — | Accept project changes and bump preset version |
+
+<details>
+<summary><strong>Usage examples</strong></summary>
+
+```bash
+# Extract DNA from current project
+/claude-dna:extract
+
+# Apply a named preset to current project
+/claude-dna:apply my-saas-style
+
+# Import a preset from URL
+/claude-dna:import https://example.com/presets/minimal.json
+
+# Import from a local file
+/claude-dna:import ../other-project/.project-dna/dna.json
+
+# Compare two presets
+/claude-dna:diff my-saas-style minimal-dashboard
+
+# Compare a preset against current project DNA
+/claude-dna:diff my-saas-style
+```
+
+</details>
 
 ---
 
@@ -322,9 +405,80 @@ claude-dna/
 
 ---
 
+## 🔧 Troubleshooting
+
+<details>
+<summary><strong>"Marketplace added but commands not found"</strong></summary>
+
+The marketplace is just the catalog. You need to install the plugin from it:
+
+```bash
+/plugin install claude-dna@claude-dna
+```
+
+The first `claude-dna` is the plugin name, the second is the marketplace name.
+
+</details>
+
+<details>
+<summary><strong>"Invalid schema" error when adding marketplace</strong></summary>
+
+Make sure you're on the latest version. The marketplace format requires a top-level `name` and `owner` field. Update to the latest:
+
+```bash
+/plugin marketplace update claude-dna
+```
+
+Or remove and re-add:
+
+```bash
+/plugin marketplace remove claude-dna
+/plugin marketplace add mohammedsaifali/claude-dna
+/plugin install claude-dna@claude-dna
+```
+
+</details>
+
+<details>
+<summary><strong>Commands not appearing after install</strong></summary>
+
+Try reloading plugins:
+
+```bash
+/reload-plugins
+```
+
+If that doesn't work, verify the plugin is installed and enabled:
+
+```bash
+/plugin marketplace list
+```
+
+</details>
+
+<details>
+<summary><strong>"No Project DNA found" when running commands</strong></summary>
+
+Most commands require a `.project-dna/dna.json` file in your project. Run `/claude-dna:extract` first to create one, or `/claude-dna:import` to bring in an existing preset.
+
+</details>
+
+---
+
 ## 🤝 Contributing
 
 ```bash
+# Clone and test locally
+git clone https://github.com/mohammedsaifali/claude-dna.git
+cd claude-dna
+
+# Test your changes in Claude Code
+claude --plugin-dir .
+
+# Validate plugin structure
+claude plugin validate .
+
+# Submit a PR
 git checkout -b feat/my-feature
 git commit -m 'feat: add my feature'
 git push origin feat/my-feature
@@ -337,7 +491,7 @@ git push origin feat/my-feature
 ## 🙏 Acknowledgments
 
 - Inspired by [interface-design](https://github.com/Dammyjay93/interface-design) by Damola Akinleye
-- Built on the [Claude Code Plugin System](https://docs.anthropic.com/en/docs/claude-code) by Anthropic
+- Built on the [Claude Code Plugin System](https://code.claude.com/docs/en/plugins) by Anthropic
 
 ---
 
