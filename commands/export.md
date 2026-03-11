@@ -9,7 +9,7 @@ description: Export the current project's DNA to your global presets directory (
 ### Step 1: Check for DNA
 
 Read `.project-dna/dna.json` in the current directory.
-If not found, tell the user to run `/project-dna:extract` first.
+If not found, tell the user to run `/claude-dna:extract` first.
 
 ### Step 2: Validate
 
@@ -35,7 +35,7 @@ Display:
 Exported "{name}" v{version} to ~/.project-dna/presets/{name}.json
 
 Use in any project:
-  /project-dna:apply {name}
+  /claude-dna:apply {name}
 
 Share with others:
   Copy ~/.project-dna/presets/{name}.json to their project as .project-dna/dna.json

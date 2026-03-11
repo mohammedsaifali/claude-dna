@@ -15,8 +15,8 @@ If directory doesn't exist or is empty:
 No saved presets yet.
 
 Get started:
-  /project-dna:extract    Capture DNA from your current project
-  /project-dna:export     Save extracted DNA to your global presets
+  /claude-dna:extract    Capture DNA from your current project
+  /claude-dna:export     Save extracted DNA to your global presets
 ```
 
 ### Step 2: List presets
@@ -43,9 +43,9 @@ Your DNA Presets
    Saved: 2026-01-20
 
 Commands:
-  /project-dna:apply {name}     Apply a preset to current project
-  /project-dna:diff {a} {b}     Compare two presets
-  /project-dna:import {path}    Import a preset from file
+  /claude-dna:apply {name}     Apply a preset to current project
+  /claude-dna:diff {a} {b}     Compare two presets
+  /claude-dna:import {path}    Import a preset from file
 ```
 
 ### Step 3: If current project has DNA

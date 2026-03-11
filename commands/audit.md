@@ -8,7 +8,7 @@ description: Audit the current project against its saved DNA preset. Finds drift
 
 ### Step 1: Load DNA
 
-Read `.project-dna/dna.json`. If not found, tell user to run `/project-dna:extract` first.
+Read `.project-dna/dna.json`. If not found, tell user to run `/claude-dna:extract` first.
 
 ### Step 2: Scan current project
 

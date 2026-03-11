@@ -9,9 +9,9 @@ description: Compare two DNA presets side-by-side to see differences in tech sta
 ### Step 1: Load two presets
 
 Parse `$ARGUMENTS` for two sources. Accepts:
-- Two preset names: `/project-dna:diff my-saas-style minimal-dashboard`
-- Two file paths: `/project-dna:diff ./project-a/dna.json ./project-b/dna.json`
-- One argument + current: `/project-dna:diff my-saas-style` (compares against current `.project-dna/dna.json`)
+- Two preset names: `/claude-dna:diff my-saas-style minimal-dashboard`
+- Two file paths: `/claude-dna:diff ./project-a/dna.json ./project-b/dna.json`
+- One argument + current: `/claude-dna:diff my-saas-style` (compares against current `.project-dna/dna.json`)
 
 If only one or no arguments, ask the user to specify what to compare.
 

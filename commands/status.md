@@ -66,7 +66,7 @@ Display:
 No Project DNA found in this directory.
 
 Get started:
-  /project-dna:extract    Scan this project and capture its DNA
-  /project-dna:apply      Apply a preset from another project
-  /project-dna:list       See your saved presets
+  /claude-dna:extract    Scan this project and capture its DNA
+  /claude-dna:apply      Apply a preset from another project
+  /claude-dna:list       See your saved presets
 ```

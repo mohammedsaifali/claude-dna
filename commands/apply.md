@@ -14,7 +14,7 @@ Check for DNA in this order:
 1. If `$ARGUMENTS` is provided, treat it as a path to a `dna.json` file
 2. Check `.project-dna/dna.json` in current directory
 3. Check `~/.project-dna/presets/` for saved global presets
-4. If nothing found, tell the user and suggest `/project-dna:extract` or `/project-dna:list`
+4. If nothing found, tell the user and suggest `/claude-dna:extract` or `/claude-dna:list`
 
 ### Step 2: Present the DNA summary
 
@@ -104,4 +104,4 @@ Show what was applied and what the user should do next.
 - If the project already has files, ask before overwriting each one.
 - For existing projects, MERGE don't replace — add DNA tokens to existing config rather than overwriting.
 - If a dependency version conflicts with an existing one, flag it and let the user decide.
-- After applying, suggest running `/project-dna:audit` to verify.
+- After applying, suggest running `/claude-dna:audit` to verify.

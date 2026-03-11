@@ -31,9 +31,9 @@ Copy the preset to `.project-dna/dna.json` in the current directory.
 Imported "{name}" v{version} (from {source})
 
 Next steps:
-  /project-dna:status     See the full DNA summary
-  /project-dna:apply      Apply this DNA to your project
-  /project-dna:audit      Check how your project compares to this DNA
+  /claude-dna:status     See the full DNA summary
+  /claude-dna:apply      Apply this DNA to your project
+  /claude-dna:audit      Check how your project compares to this DNA
 ```
 
 ## Rules

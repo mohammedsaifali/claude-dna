@@ -96,9 +96,9 @@ Check for config files:
 
 ### Step 10: Offer next steps
 
-- "Run `/project-dna:status` to see your DNA summary"
-- "Copy `.project-dna/dna.json` to any new project and run `/project-dna:apply`"
-- "Run `/project-dna:export` to save to a global presets directory"
+- "Run `/claude-dna:status` to see your DNA summary"
+- "Copy `.project-dna/dna.json` to any new project and run `/claude-dna:apply`"
+- "Run `/claude-dna:export` to save to a global presets directory"
 
 ## Rules
 

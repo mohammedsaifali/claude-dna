@@ -180,7 +180,7 @@ Project DNA is stored in `.project-dna/dna.json`. This is the portable preset fi
 
 ## Core Behaviors
 
-### When extracting DNA (`/project-dna:extract`)
+### When extracting DNA (`/claude-dna:extract`)
 1. Scan `package.json` for all dependencies
 2. Read `tailwind.config.*` for theme customization
 3. Read `globals.css` or equivalent for CSS variables
@@ -192,19 +192,19 @@ Project DNA is stored in `.project-dna/dna.json`. This is the portable preset fi
 9. Check for tooling config (.eslintrc, .prettierrc, jest.config)
 10. Compile everything into `.project-dna/dna.json`
 
-### When applying DNA (`/project-dna:apply`)
+### When applying DNA (`/claude-dna:apply`)
 1. Read the preset from `.project-dna/dna.json` or user-specified path
 2. Present a summary of what will be applied
 3. Ask user to confirm or customize selections
 4. Apply in order: dependencies → config files → design tokens → component patterns
 5. Save applied DNA reference for future audits
 
-### When auditing (`/project-dna:audit`)
+### When auditing (`/claude-dna:audit`)
 1. Compare current project state against the saved DNA
 2. Flag drift: new colors not in palette, spacing violations, missing patterns
 3. Suggest corrections
 
-### When comparing (`/project-dna:diff`)
+### When comparing (`/claude-dna:diff`)
 1. Load two DNA preset files
 2. Show differences side-by-side
 3. Help user merge or pick preferences

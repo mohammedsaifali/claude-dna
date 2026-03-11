@@ -8,11 +8,11 @@ description: Update the current project's DNA preset with changes you've made. C
 
 ### Step 1: Load current DNA
 
-Read `.project-dna/dna.json`. If not found, suggest `/project-dna:extract`.
+Read `.project-dna/dna.json`. If not found, suggest `/claude-dna:extract`.
 
 ### Step 2: Detect changes
 
-Run the same scans as `/project-dna:audit` but instead of flagging drift, present it as evolution:
+Run the same scans as `/claude-dna:audit` but instead of flagging drift, present it as evolution:
 
 ```
 DNA Evolution Detected
@@ -44,11 +44,11 @@ For each change, ask:
 
 1. Bump the version (patch for small changes, minor for significant evolution)
 2. Update `.project-dna/dna.json`
-3. Ask if user wants to also update the global preset (`/project-dna:export`)
+3. Ask if user wants to also update the global preset (`/claude-dna:export`)
 
 ```
 DNA evolved: "{name}" v1.0.0 → v1.1.0
   3 tokens updated, 2 dependencies added, 1 pattern changed
 
-Run /project-dna:export to update your global preset
+Run /claude-dna:export to update your global preset
 ```

@@ -6,7 +6,7 @@
     "name": "Saif & Claude",
     "url": "https://github.com/cp-saif"
   },
-  "repository": "https://github.com/cp-saif/claude-dna",
+  "repository": "https://github.com/mohammedsaifali/claude-dna",
   "license": "MIT",
   "commands": "./commands",
   "skills": "./skills"
