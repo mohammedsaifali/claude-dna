@@ -7,7 +7,7 @@
     {
       "name": "claude-dna",
       "description": "Extract, export, and import your complete project DNA — tech stack, design tokens, fonts, colors, architecture, and conventions. Like a photographer's preset, but for your builder identity.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "source": "./",
       "author": {
         "name": "Saif & Claude"
